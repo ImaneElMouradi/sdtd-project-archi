@@ -1,0 +1,5 @@
+resource "aws_key_pair" "admin" {
+	key_name = "admin"
+	public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCr1MimbbRIstrHnQyB0/TZTiXb+ngs7cLBKcCjYqYWrVWCWtbNfwsKrN5NHuTk1+mW9owfK4RBqzeKOX8l/VBGw/YAJie6gB6yxXZr5dYS9wqL4xTRCuss9HxaVP4DpdiTlIYKyMKMeEhYyG3a4sSnTwu4se08X+DZNDZxgAJPofp8yYgzRkVGDbE/uP3U5OJ2Ql1iyETvh/YlDPoDrMvm6P2QeMZy8OYH0VQcRQNds3bXLbgwsdR6vehQcC7wR7L/DbzM6stHMqrTYJNMwBtZGZydyObQzFmU2DzfK4yXwe6aBabgac9/IZ3sw8IGN0HxvJWh0cQg5W+xgmzvWlvT vagrant@ubuntu-bionic"
+
+}
