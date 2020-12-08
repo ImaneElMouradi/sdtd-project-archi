@@ -4,6 +4,7 @@ resource "aws_instance" "client" {
 	key_name = "admin"
 	private_ip = "172.31.48.20"
 	subnet_id = "subnet-03cfb1532a4b2393b"
+	# vpc_security_group_ids = [aws_security_group.allow_kafka.id]
 
 	tags = {
 			Name = "client"
@@ -30,7 +31,7 @@ resource "aws_instance" "client" {
 					"sudo apt update",
 					"sudo apt install python3-pip -y",
 					"pip3 install numpy kafka-python",
-					"python3 /home/ubuntu/country_crimes.py France",
+					# "python3 /home/ubuntu/country_crimes.py France",
 			]
 	}
 }
