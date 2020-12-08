@@ -7,6 +7,9 @@ variable "AWS_REGION" {
 variable "AMIS" {
 	type  = map(string)
 	default = {
-		us-east-1 = "ami-054e49cb26c2fd312"
+		us-east-1 = "ami-0885b1f6bd170450c"
 	}
+}
+variable "keyPath" {
+	default = "/home/phedri/Downloads/keys/aws/id_rsa_aws"
 }
