@@ -32,3 +32,21 @@ resource "aws_security_group" "allow_kafka" {
      cidr_blocks     = ["0.0.0.0/0"]
    }
  }
+
+resource "aws_security_group" "allow_cassandra" {
+   vpc_id      = aws_default_vpc.default.id
+
+   ingress {
+     from_port   = 9042
+     to_port     = 9042
+     protocol    = "tcp"
+     cidr_blocks     = ["0.0.0.0/0"]
+   }
+
+ egress {
+     from_port       = 0
+     to_port         = 0
+     protocol        = "-1"
+     cidr_blocks     = ["0.0.0.0/0"]
+   }
+ }
