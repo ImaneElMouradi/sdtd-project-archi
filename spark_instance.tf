@@ -1,36 +1,38 @@
-resource "aws_instance" "spark" {
-	ami = lookup(var.AMIS, var.AWS_REGION)
-	instance_type = "t2.large"
-    key_name = "admin"
-	private_ip = "172.31.48.37"
-	subnet_id = "subnet-0c6a85d5766c1047c"
-	monitoring = "true"
+# resource "aws_instance" "spark" {
+# 	ami = lookup(var.AMIS, var.AWS_REGION)
+# 	instance_type = "t2.large"
+#     key_name = "admin"
+# 	private_ip = "172.31.48.37"
+# 	subnet_id = "subnet-0c6a85d5766c1047c"
+# 	monitoring = "true"
+#     vpc_security_group_ids = [aws_default_security_group.default.id, aws_security_group.allow_spark.id]
 
-	tags = {
-            Name = "spark"
-    }
 
-	connection {
-			type = "ssh"
-			user        = "ubuntu"
-			private_key = file(var.keyPath)
-			host = self.public_dns
-	}
+# 	tags = {
+#             Name = "spark"
+#     }
 
-	provisioner "local-exec" {
-			command = "echo ${aws_instance.spark.private_ip}"
-	}
+# 	connection {
+# 			type = "ssh"
+# 			user        = "ubuntu"
+# 			private_key = file(var.keyPath)
+# 			host = self.public_dns
+# 	}
 
-	provisioner "file" {
-			source = "script/script_spark.sh"
-			destination = "/tmp/script_spark.sh"
-	}
+# 	provisioner "local-exec" {
+# 			command = "echo ${aws_instance.spark.private_ip}"
+# 	}
 
-	provisioner "remote-exec" {
-			inline = [
-					"chmod +x /tmp/script_spark.sh",
-					"/tmp/script_spark.sh",
-			]
-	}
-}
+# 	provisioner "file" {
+# 			source = "script/script_spark.sh"
+# 			destination = "/tmp/script_spark.sh"
+# 	}
+
+# 	provisioner "remote-exec" {
+# 			inline = [
+# 					"chmod +x /tmp/script_spark.sh",
+# 					"/tmp/script_spark.sh",
+# 			]
+# 	}
+# }
 
