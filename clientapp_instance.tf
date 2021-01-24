@@ -3,7 +3,7 @@ resource "aws_instance" "client" {
 	instance_type = "t2.micro"
 	key_name = "admin"
 	private_ip = "172.31.48.20"
-	subnet_id = "subnet-03cfb1532a4b2393b"
+	subnet_id = "subnet-0c6a85d5766c1047c"
 	# vpc_security_group_ids = [aws_security_group.allow_kafka.id]
 
 	tags = {
@@ -26,12 +26,19 @@ resource "aws_instance" "client" {
 			destination = "/home/ubuntu/country_crimes.py"
 	}
 
+	provisioner "file" {
+			source = "script/script_client.sh"
+			destination = "/tmp/script_client.sh"
+	}
+
 	provisioner "remote-exec" {
 			inline = [
-					"sudo apt update",
-					"sudo apt install python3-pip -y",
-					"pip3 install numpy kafka-python",
-					# "python3 /home/ubuntu/country_crimes.py France",
+					"chmod +x /tmp/script_client.sh",
+                    "/tmp/script_client.sh",
+					# "sudo apt update",
+					# "sudo apt install python3-pip -y",
+					# "pip3 install numpy kafka-python",
+					# # "python3 /home/ubuntu/country_crimes.py France",
 			]
 	}
 }

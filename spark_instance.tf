@@ -3,7 +3,8 @@ resource "aws_instance" "spark" {
 	instance_type = "t2.large"
     key_name = "admin"
 	private_ip = "172.31.48.37"
-	subnet_id = "subnet-03cfb1532a4b2393b"
+	subnet_id = "subnet-0c6a85d5766c1047c"
+	monitoring = "true"
 
 	tags = {
             Name = "spark"
