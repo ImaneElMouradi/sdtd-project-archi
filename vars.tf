@@ -11,5 +11,5 @@ variable "AMIS" {
 	}
 }
 variable "keyPath" {
-	default = "/home/phedri/Downloads/keys/aws/id_rsa_aws"
+	default = "/Users/amineelmouradi/Desktop/sdtd/sdtd-project-archi/id_rsa_aws"
 }

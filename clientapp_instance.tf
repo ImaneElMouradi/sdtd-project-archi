@@ -3,7 +3,7 @@ resource "aws_instance" "client" {
 	instance_type = "t2.micro"
 	key_name = "admin"
 	private_ip = "172.31.48.20"
-	subnet_id = "subnet-0c6a85d5766c1047c"
+	subnet_id = "subnet-5403c365"
 
 	tags = {
 			Name = "client"
