@@ -13,3 +13,6 @@
 [0m2021.01.24 12:13:31 INFO  time: initialize in 1.34s[0m
 [0m2021.01.24 12:13:33 WARN  Build server is not auto-connectable.[0m
 [0m2021.01.24 12:13:33 WARN  no build tool detected in workspace '/home/phedri/Documents/code2020/terraform2020/sdtd-project-archi'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+Jan 24, 2021 12:36:24 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTraceNotification
+[0m2021.01.24 17:15:49 INFO  shutting down Metals[0m

@@ -3,3 +3,5 @@ terraform.tfstate
 terraform.tfstate.backup
 .terraform/
 crash.log
+.metals
+id_rsa_aws

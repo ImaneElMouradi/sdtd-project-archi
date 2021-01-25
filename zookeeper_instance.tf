@@ -3,7 +3,7 @@ resource "aws_instance" "zookeeper" {
 	instance_type = "t2.large"
 	key_name = "admin"
 	private_ip = "172.31.48.50"
-	subnet_id = "subnet-0c6a85d5766c1047c"
+	subnet_id = "subnet-5403c365"
     vpc_security_group_ids = [aws_default_security_group.default.id, aws_security_group.allow_zookeeper.id]
 
 	tags = {
